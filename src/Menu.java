@@ -4,21 +4,45 @@ public class Menu {
     public static void main(String[] args) {
 
         Scanner lectura = new Scanner(System.in);
-        System.out.print("Ingrese el valor del lado del cuadrado : ");
-        double longitudLado = lectura.nextDouble();
+        int opMe=0;
 
-        Cuadrado miCuarado = new Cuadrado(longitudLado);
-        System.out.println(miCuarado.getArea());
-        System.out.println(miCuarado.getPerimetro());
+        System.out.println("\t ==[ MENU ]==\n");
+        System.out.println("1 Cuadrado");
+        System.out.println("2 Rectangulo");
+        System.out.println("0 SALIR");
+
+        do{
+            System.out.print("Opcion : ");
+            opMe= lectura.nextInt();
+
+            switch (opMe){
+                case 1:
+                    System.out.println("\t CUADRADO");
+                    System.out.print("Ingrese el valor del lado del cuadrado : ");
+                    double longitudLado = lectura.nextDouble();
+
+                    Cuadrado miCuarado = new Cuadrado(longitudLado);
+                    System.out.println(miCuarado.getArea());
+                    System.out.println(miCuarado.getPerimetro());
+                    break;
+                case 2:
+                    System.out.println("\t RECTANGULO");
+                    System.out.print("Ingrese la bse rectangular : ");
+                    double longitudBase = lectura.nextDouble();
+                    System.out.print("Ingrese la altura rectangular : ");
+                    double longitudAltura = lectura.nextDouble();
+                    Rectangulo miRectangulo = new Rectangulo(longitudBase,longitudAltura);
+                    System.out.println(miRectangulo.getArea());
+                    System.out.println(miRectangulo.getPerimetro());
+                    break;
+            }
+        }while (opMe != 0);
 
 
-        System.out.print("Ingrese la bse rectangular : ");
-        double longitudBase = lectura.nextDouble();
-        System.out.print("Ingrese la altura rectangular : ");
-        double longitudAltura = lectura.nextDouble();
-        Rectangulo miRectangulo = new Rectangulo(longitudBase,longitudAltura);
-        System.out.println(miRectangulo.getArea());
-        System.out.println(miRectangulo.getPerimetro());
+
+
+
+
 
         /* //INSTANCIA CREACION
         miRectangulo.setX(20);
