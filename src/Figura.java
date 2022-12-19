@@ -1,17 +1,13 @@
 import javax.swing.plaf.PanelUI;
 
-public class Figura {
+public abstract class Figura {
     int x,y;
 
     double perimetro,area;
 
-    public void calcularPerimetro(){
-        perimetro = 2*x+2*y;
-    }
+    protected abstract void calcularPerimetro();
 
-    public void calcularArea(){
-        area = x*y;
-    }
+    protected abstract void calcularArea();
 
     public void setX(int x) {
         this.x = x;
@@ -33,7 +29,9 @@ public class Figura {
         return area;
     }
 
-    public void setArea(double area) {
-        this.area = area;
-    }
+    /*@Override
+    protected abstract void calcularArea();
+
+    protected abstract void calcularPerimetro();*/
+
 }
